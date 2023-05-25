@@ -26,16 +26,22 @@ ___
 
 ## Installation via GitHub
 
+### Prepare enviroment variables
+
+>Rename `.env.sample` -> `.env` and populate with all required data
+
 Be sure that you have installed Postgres DB locally.
 If you familiar with this step you can skip this step.
 
 ```shell
-git clone https://github.com/GeorgePavlej/cinema-api-service.git
+git clone https://github.com/phaishuk/Cinema-API.git
 cd cinema-service-api
-python -m venv venv(Windows) or python3 -m venv venv (Linux or macOS)
+python -m venv venv (Windows) or python3 -m venv venv (Linux or macOS)
 venv\Scripts\activate (Windows) or source venv/bin/activate (Linux or macOS)
 pip install -r requirements.txt
-copy .env.sample -> .env and populate with all required data
+python manage.py migreate
+python manage.py runserver
+
 ```
 
 ---
@@ -45,8 +51,6 @@ copy .env.sample -> .env and populate with all required data
 Docker and docker-compose must be installed.
 
 ```shell
-git clone https://github.com/phaishuk/Cinema-API
-cd Cinema-API 
 docker-compose build
 docker-compose up
 ```
@@ -59,11 +63,6 @@ To get access you can use next **endpoints**:
 
 - create user via `/api/user/register/`
 - get access token via `/api/user/token/`
-- use [ModHeader](https://chrome.google.com/webstore/detail/modheader-modify-http-hea/idgpnmonknjnojddfkpgkljpfnnfcklj) to get access to all features
-
-below is a screenshot with example:
-
-![img.png](img.png)
 
 ___
 
