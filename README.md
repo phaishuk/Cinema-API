@@ -30,18 +30,12 @@ Be sure that you have installed Postgres DB locally.
 If you familiar with this step you can skip this step.
 
 ```shell
-git clone https://github.com/phaishuk/Cinema-API
-cd Cinema-API 
-python -m venv venv
-source venv/bin/activate
+git clone https://github.com/GeorgePavlej/cinema-api-service.git
+cd cinema-service-api
+python -m venv venv(Windows) or python3 -m venv venv (Linux or macOS)
+venv\Scripts\activate (Windows) or source venv/bin/activate (Linux or macOS)
 pip install -r requirements.txt
-set POSTGRES_HOST=<your db hostname>
-set POSTGRES_NAME=<your db name>
-set POSTGRES_USER = <your db username> 
-set POSTGRES PASSWORD=<your db user password>
-set SECRET_KEY=<your secret key> 
-python manage.py migrate
-python manage.py runserver
+copy .env.sample -> .env and populate with all required data
 ```
 
 ---
@@ -73,4 +67,11 @@ below is a screenshot with example:
 
 ___
 
+## API documentation
 
+The API documentation is available at next endpoints:
+
+```djangourlpath
+api/doc/swagger/
+api/doc/redoc/
+```
